@@ -1,7 +1,6 @@
 def f(x,y):
     result = 0
-    l1 = list(str(x))
-    for i in l1:
+    for i in list(str(x)):
         result += int(i)**y
     return result
 

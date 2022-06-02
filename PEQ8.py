@@ -7,13 +7,10 @@ for i in numbers:
         finalNumbers.append(i)        
 
 def p(n) :
-    finalList = list()
     result = 1
-    for x in list(str(n)):
-        x = int(x)
-        finalList.append(x)
-    for i in finalList :
-        result *= i
+    digitList = list(map(lambda x : int(x),list(str(n))))
+    for digit in digitList:
+        result *= digit
     return result
   
 finalList = list()

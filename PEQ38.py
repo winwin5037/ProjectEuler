@@ -1,4 +1,4 @@
-def op1(m,n):
+def operation1(m,n):
     e = ""
     l1= list(range(1,n+1))
     for i in l1:
@@ -6,14 +6,10 @@ def op1(m,n):
     return int(e)
 
 def isdigit9(n):
-    l1 = list(str(n))
-    l2 = list()
-    for i in l1:
-        i = int(i)
-        l2.append(i)
+    digitList = list(map(lambda x : int(x),list(str(n))))
     numbers = list(range(1,10))
-    l2.sort()
-    if l2 == numbers:
+    digitList.sort()
+    if digitList == numbers:
         return True
     return False
     
@@ -21,7 +17,7 @@ finalList = list()
 
 for i in range(2,10):
     for j in range(10**2,10**4):
-        if isdigit9(op1(j,i)):
-            finalList.append(op1(j,i))
+        if isdigit9(operation1(j,i)):
+            finalList.append(operation1(j,i))
 
 print(max(finalList))
