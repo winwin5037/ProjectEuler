@@ -1,12 +1,8 @@
-import sympy as sp
+from sympy import divisors
 
-finalList = list()
 i=1
 while True:
     x = int(i*(i+1)/2)
-    if len(sp.divisors(x)) == 500 or len(sp.divisors(x)) > 500 :
-        finalList.append(x)
-    if len(finalList) == 1:
-        break
+    if len(divisors(x)) == 500 or len(divisors(x)) > 500 :
+        print(x)  
     i+=1
-print(finalList)
