@@ -8,15 +8,13 @@ import time
 start_time = time.time()
 
 def digitelimination(n):
-    s2 = np.array([])
+    results = np.array([])
     for i in n:
-        if "8" in str(i) or "4" in str(i) or "6" in str(i) or "2" in str(i) or "5" in str(i) or "0" in str(i):
-            pass
-        else:
-            s2 = np.append(s2,i)
-    return s2
+        if not ("8" in str(i) or "4" in str(i) or "6" in str(i) or "2" in str(i) or "5" in str(i) or "0" in str(i)):
+            results = np.append(results,i)
+    return results
 
-def transformint(n): return int(n)
+transformint = lambda x : int(x)
 transform = np.vectorize(transformint)
 
 def rotation(n):
@@ -35,19 +33,15 @@ def primer(x):
                     sieves[j] = False
         return np.array(l)
 
-p = primer(mainNumber)
-testList = np.array(list(range(mainNumber)))
-testList = np.array(digitelimination(testList))
-testList = transform(testList)
-testList = testList[(testList%3 !=0) * (testList%7!=0) * (testList%11!=0)]
+primeNumbers = primer(mainNumber)
+testList = transform(np.array(digitelimination(primeNumbers)))
 
-finalList = np.array([])
+finalList = np.array([2,3,5,7,11])
 for i in testList:
-    x = np.intersect1d(np.array(rotation(i)),p)
+    x = np.intersect1d(np.array(rotation(i)),primeNumbers)
     for j in x:
         if len(x) == len(rotation(i)):
             finalList = np.append(finalList,x)
-for i in [2,3,5,7,11]:
-    finalList = np.append(finalList,i)
+
 print("--- %s seconds ---" % (time.time() - start_time))
 print(f"The answer is {len(set(finalList))}")
