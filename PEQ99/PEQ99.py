@@ -3,9 +3,6 @@ import math
 def hmd(a,b):
     return math.floor(b*math.log(a,10))+1
 
-finalList = list()
-maxValue = 0
-
 with open("p099_base_exp.txt","r") as numbers:
     inputs = numbers.readlines()
     for line in inputs:
