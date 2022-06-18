@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[33]:
-
-
 import math
 
 def hmd(a,b):
@@ -21,10 +15,3 @@ with open("p099_base_exp.txt","r") as numbers:
         temp = hmd(a,b)
         if temp == 3005316:
             print([a,b,temp])
-
-
-# In[ ]:
-
-
-
-
