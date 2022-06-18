@@ -6,9 +6,8 @@ i=6
 
 PentagonList = [1,5,12,22,35]
 while True:
-    newPentagon = pentagon(i)
-    PentagonList.append(newPentagon)
-    lastPentagon = PentagonList[-1]
+    lastPentagon = pentagon(i)
+    PentagonList.append(lastPentagon)
     for number in PentagonList:
         if lastPentagon - number in PentagonList:
             if abs(number-(lastPentagon-number)) in PentagonList:
