@@ -1,15 +1,17 @@
 import math
 
 def f(a,b):
-    return math.floor(b*math.log(a,10))+1
+    return b*math.log(a,10)
+
 
 with open("p099_base_exp.txt","r") as numbers:
-    inputs = numbers.readlines()
+    lines = numbers.readlines()
 
 maxValue = 0
 finalList = list()
+lineNumber = 1
 
-for line in inputs:
+for line in lines:
     line = line[:-1]
     inputList = line.split(",")
     a,b = int(inputList[0]),int(inputList[1])
@@ -17,7 +19,8 @@ for line in inputs:
     finalList.append((a,b,temp))
     if temp > maxValue:
         maxValue = temp
+        whatisa,whatisb = a,b
+        answer = lineNumber
+    lineNumber+=1
 
-for t in finalList:
-    if t[2] == maxValue:
-        print(t,finalList.index(t)+1)
+print(whatisa,whatisb,maxValue,answer)
