@@ -8,7 +8,6 @@ with open("p099_base_exp.txt","r") as numbers:
     lines = numbers.readlines()
 
 maxValue = 0
-finalList = list()
 lineNumber = 1
 
 for line in lines:
@@ -16,7 +15,6 @@ for line in lines:
     inputList = line.split(",")
     a,b = int(inputList[0]),int(inputList[1])
     temp = f(a,b)
-    finalList.append((a,b,temp))
     if temp > maxValue:
         maxValue = temp
         whatisa,whatisb = a,b
