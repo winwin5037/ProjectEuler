@@ -37,6 +37,7 @@ maxValue = 0
 nextPrime = 5
 while True:
     if isprime(nextPrime):
+        n = n*nextPrime
         temp = n/totient(n)
         if temp > maxValue:
             maxValue = temp
