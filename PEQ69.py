@@ -34,13 +34,13 @@ n = 2*3
 maxValue = 0
 nextPrime = 5
 while True:
-    temp = n/eulerTotient(n)
-    if temp > maxValue:
-        maxValue = temp
-        print(maxValue,n)
     if isprime(nextPrime):
         n = n*nextPrime
-    if n>10**6:
-        print("--- %s seconds ---" % (time.time() - start_time))
-        break
+        temp = n/eulerTotient(n)
+        if temp > maxValue:
+            maxValue = temp
+            print(maxValue,n)
+        if n>10**6:
+            print("--- %s seconds ---" % (time.time() - start_time))
+            break
     nextPrime += 2
