@@ -30,18 +30,17 @@ def frequency(A):
             print(t,element)
             f = t
             whichElement = element
-    return (element,f)
 
 number = 5
 results = list()
 
 while True:
-    if hipo(number)==[]:
+    if hypotenuse(number)==[]:
         number+=1
-    for triangle in hipo(number):
+    for triangle in hypotenuse(number):
         if sum(triangle)<=1000:
             results.append(sum(triangle))
     number+=1
-    if number>500:
+    if number>1000:
         break
 print(frequency(results))
