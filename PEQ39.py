@@ -24,7 +24,7 @@ def hypotenuse(c):
 
 def frequency(A):
     f = 1
-    for element in A:
+    for element in set(A):
         t = A.count(element)
         if t>f:
             print(t,element)
