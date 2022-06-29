@@ -3,7 +3,6 @@ finalList = list(range(1,10))
 
 while True:
     if len(str(pow(i,j)))==j:
-        
         finalList.append(i**j)
         print(i,j,i**j,f"the answer is {len(finalList)}")
     i+=1
