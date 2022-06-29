@@ -3,33 +3,24 @@ def perfectSquare(n):
 
 def hypotenuse(c):
     results = list()
-    if c%2==1:
-        b = c
-        while True:
+    b=c
+    while True:
             b -=2
             if perfectSquare(c*c-b*b):
                 a = int((c*c-b*b)**0.5)
                 results.append(tuple(sorted((a,b,c))))
-            if b==1:
-                break
-    b=c
-    while True:
-            b -=1
-            if perfectSquare(c*c-b*b):
-                a = int((c*c-b*b)**0.5)
-                results.append(tuple(sorted((a,b,c))))
-            if b==1:
+            if b<1:
                 break
     return set(results)
 
 def frequency(A):
     f = 1
     for element in set(A):
-        t = A.count(element)
-        if t>f:
-            print(t,element)
-            f = t
-            whichElement = element
+        temp = A.count(element)
+        if temp>f:
+            f = temp
+            maxValue = element
+    return maxValue
 
 number = 5
 results = list()
