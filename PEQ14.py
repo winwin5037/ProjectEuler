@@ -15,8 +15,8 @@ while True:
     temp = collatz(i)
     if temp>longestChain:
         longestChain = temp
-        longestNumber = i
+        maxNumber = i
     i+=1
     if i==10**6:
         break
-print(longestNumber,longestChain)
+print(maxNumber,longestChain)
