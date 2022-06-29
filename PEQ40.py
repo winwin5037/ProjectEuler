@@ -1,9 +1,6 @@
 dc = "0.123"
-numbers = [4]
-for i in range(10**6):
-    numbers.append(numbers[-1]+1)
 
-for i in numbers:
+for i in range(4,10**6+5):
     dc += str(i)
 
 control = dc[2:]
@@ -14,4 +11,3 @@ for i in [1,10,100,1000,10000,100000,1000000]:
     product *= int(m)
 
 print(product)
-
