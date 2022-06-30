@@ -25,4 +25,5 @@ while True:
     if isprime(n)==False:
         if goldbach(n)==False:
             print(n)
+            break
     n+=2
