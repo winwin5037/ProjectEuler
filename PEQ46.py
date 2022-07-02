@@ -12,8 +12,7 @@ def primerange(a,b):
     return filter(lambda x : isprime(x),range(a,b))
  
 def isSquare(n):
-    m = pow(n,1/2)
-    return m == int(m)
+    return pow(n,1/2) == int(pow(n,1/2))
     
 def goldbach(n):
     for prime in primerange(3,n):
