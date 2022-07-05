@@ -12,8 +12,8 @@ def pf(n):
             n = n / i
     if n > 2:
         primeFactors.add(n)
-    return list(primeFactors)
-number = 10**5
+    return primeFactors
+number = 2*3*5*7
 while True:
     if len(pf(number))==4:
         number+=1
