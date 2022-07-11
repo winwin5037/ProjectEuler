@@ -1,4 +1,7 @@
 import math
+import time
+
+start_time = time.time()
 
 def f(a,b):
     return b*math.log(a,10)
@@ -17,8 +20,8 @@ for line in lines:
     temp = f(a,b)
     if temp > maxValue:
         maxValue = temp
-        whatisa,whatisb = a,b
         answer = lineNumber
     lineNumber+=1
 
-print(whatisa,whatisb,maxValue,answer)
+print(answer)
+print("--- %s seconds ---" % (time.time() - start_time))

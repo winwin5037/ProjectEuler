@@ -1,3 +1,7 @@
+import time
+
+start_time = time.time()
+
 def isprime(num):
     if num==2 or num==3:
         return True
@@ -24,5 +28,6 @@ while True:
     if isprime(n)==False:
         if goldbach(n)==False:
             print(n)
+            print("--- %s seconds ---" % (time.time() - start_time))
             break
     n+=2

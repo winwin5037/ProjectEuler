@@ -1,3 +1,7 @@
+import time
+
+start_time = time.time()
+
 def perfectSquare(n):
     return pow(n,1/2)==int(pow(n,1/2))
 
@@ -35,3 +39,4 @@ while True:
     if number>1000:
         break
 print(frequency(results))
+print("--- %s seconds ---" % (time.time() - start_time))

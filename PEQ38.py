@@ -1,3 +1,6 @@
+import time
+
+start_time = time.time()
 def f(a,b):
     result = ""
     for i in range(1,b+1):
@@ -16,3 +19,4 @@ for i in range(2,10):
                 maxValue = temp
 
 print(maxValue)
+print("--- %s seconds ---" % (time.time() - start_time))

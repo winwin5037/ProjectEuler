@@ -1,3 +1,7 @@
+import time
+
+start_time = time.time()
+
 def collatz(n) :
     step = 0 
     while n!=1 :
@@ -17,6 +21,7 @@ while True:
         longestChain = temp
         maxNumber = i
     i+=1
-    if i==10**6:
+    if i>10**6:
         break
 print(maxNumber,longestChain)
+print("--- %s seconds ---" % (time.time() - start_time))

@@ -14,4 +14,5 @@ while True:
                 D = abs(number-(lastPentagon-number))
                 print(D,number,lastPentagon-number)
                 print("--- %s seconds ---" % (time.time() - start_time))
+                break
     i+=1

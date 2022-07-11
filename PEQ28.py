@@ -1,3 +1,7 @@
+import time
+
+start_time = time.time()
+
 starting = list()
 n = 1002
 total = 0
@@ -13,6 +17,7 @@ for i in starting[1:]:
     total += i -((i**(1/2))-1) - i**(1/2) + 1
 # right down diagonal
 for i in starting[1:]:
-    total += i -((i**(1/2))-1) - 2*i**(1/2) + 1 + n - (n-1)
+    total += i -((i**(1/2))-1) - 2*i**(1/2) + 2
 
 print(total)
+print("--- %s seconds ---" % (time.time() - start_time))

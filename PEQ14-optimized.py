@@ -1,3 +1,7 @@
+import time
+
+start_time = time.time()
+
 pastNumbers = dict()
 def collatz(number,pastNumbers):
     m = number
@@ -21,8 +25,9 @@ while True:
     temp = collatz(i,pastNumbers)
     if temp>longestChain:
         longestChain = temp
-        longestNumber = i
+        maxNumber = i
     i+=1
     if i==10**6:
         break
-print(longestNumber,longestChain)
+print(maxNumber,longestChain)
+print("--- %s seconds ---" % (time.time() - start_time))
