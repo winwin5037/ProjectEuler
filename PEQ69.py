@@ -1,4 +1,5 @@
 import time
+
 start_time = time.time()
 
 def isprime(num):
@@ -10,25 +11,26 @@ def isprime(num):
         if num%n==0:
             return False   
     return True
-        
 
-def gcd(a,b):
-    if a==0:
-        return b
-    return gcd(b%a,a)
+def primefactors(n):
+    primeFactors = set()
+    while n % 2 == 0:
+        primeFactors.add(2)
+        n = n / 2
+    for i in range(3,int(n**(1/2))+1,2):
+        while (n % i == 0):
+            primeFactors.add(i)
+            n = n / i
+    if n > 2:
+        primeFactors.add(n)
+    return list(primeFactors)
 
-def eulerTotient(n):
-    result = 1
-    if n%2==0:
-        for i in range(3,n,2):
-            if gcd(i,n)==1:
-                result +=1
-    else:
-        for i in range(2,n):
-            if gcd(i,n)==1:
-                result +=1
-    return result
-
+def totient(n):
+    factors = primefactors(n)
+    result = n
+    for factor in factors:
+        result = result * (1-(1/factor))
+    return int(result)
 
 n = 2*3
 maxValue = 0
@@ -36,7 +38,7 @@ nextPrime = 5
 while True:
     if isprime(nextPrime):
         n = n*nextPrime
-        temp = n/eulerTotient(n)
+        temp = n/totient(n)
         if temp > maxValue:
             maxValue = temp
             print(maxValue,n)
